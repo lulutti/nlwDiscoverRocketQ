@@ -1,0 +1,30 @@
+{
+  "name": "nlwDiscoverRocketQ",
+  "version": "1.0.0",
+  "description": "Projeto desenvolvido para gerenciar perguntas anônimas de usuários direcionadas ao dono da página/sala, desenvolvido na semana NLW Rocketseat na missão discover",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon .",
+    "init-db": "node src/db/init.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lulutti/nlwDiscoverRocketQ.git"
+  },
+  "keywords": [],
+  "author": "Luiza Dragonetti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lulutti/nlwDiscoverRocketQ/issues"
+  },
+  "homepage": "https://github.com/lulutti/nlwDiscoverRocketQ#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "sqlite": "^4.0.23",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
