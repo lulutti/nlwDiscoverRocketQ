@@ -1,4 +1,5 @@
 const Database = require('../db/config');
+const express = require('express');
 
 module.exports = {
   async create(req, res){
@@ -48,9 +49,16 @@ module.exports = {
     res.render("room", {roomId: roomId, questions: questions, questionsRead: questionsRead, isNoQuestions: isNoQuestions})
   },
 
-  enter(req,res){
+  async enter(req,res){
+    const db = await Database()
     const roomId = req.body.roomId
+    const verifyRoom = await db.all(`SELECT id FROM rooms`)
+    console.log(verifyRoom)
+    for(let i = 0; i < verifyRoom.length; i++){
+      if(verifyRoom[i].id == roomId){
+        res.redirect(`/room/${roomId}`)
+      } else (console.log('sala não existe'))
+    }    
+  }
 
-    res.redirect(`/room/${roomId}`)
   } 
-}
