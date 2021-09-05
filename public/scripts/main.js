@@ -1,5 +1,6 @@
 import Modal from './modal.js';
 
+
 const modal = Modal();
 
 const modalTitle = document.querySelector('.modal h2');
@@ -38,4 +39,18 @@ function handleClick(event, check = true){
   modal.open()
 }
 
-// Parei no 2:09
+let copyRoom = document.querySelector(".copyRoom");
+
+
+copyRoom.addEventListener('click', copy);
+
+function copy(){
+  let copyText = copyRoom.textContent;
+  let textArea = document.createElement('textarea');
+  textArea.value = copyText;
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  document.execCommand('copy');
+  textArea.remove();
+}
